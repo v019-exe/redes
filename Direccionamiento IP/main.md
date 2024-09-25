@@ -48,7 +48,7 @@ Aquí es donde entra en juego la máscara de red, una máscara de red es básica
 
 **Binario:**  
 `11111111.11111111.11111111.00000000`  
-**Red:** `11111111.11111111.11111111.00000000`  
+**Red:** `11111111.11111111.11111111`.00000000  
 **Host:** `00000000`  
 
 
