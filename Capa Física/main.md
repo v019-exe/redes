@@ -1,27 +1,44 @@
-# Conexión Física
+# Capa física
 
-Una conexión física se refiere al enlace físico entre dos dispositivos en una red que permite la transmisión de datos. Este tipo de conexión puede ser:
+La **capa física** es la primera capa del modelo OSI y se encarga de la transmisión y recepción de datos sin estructurar a través de un medio físico. Esta capa define las características eléctricas y mecánicas de los dispositivos de red.
 
-1. Cables: Utiliza medios como cables de par trenzado, fibra óptica o coaxiales para conectar dispositivos.
-2. Conexiones inalámbricas: Incluye tecnologías como Wi-Fi, Bluetooth o radiofrecuencia, donde los datos se transmiten a través del aire.
+## Funciones Principales
 
-# Elementos de un Router Inalámbrico
+1. **Transmisión de Bits**: Convierte los datos en señales eléctricas, ópticas o de radio y las envía a través del medio.
+2. **Definición de Medios**: Especifica los tipos de medios de transmisión (cableado, fibra óptica, inalámbrico).
+3. **Sincronización**: Mantiene el sincronismo entre el emisor y el receptor.
+4. **Segmentación**: Aunque la segmentación es más relevante en la capa de transporte, la capa física se encarga de dividir los datos en paquetes adecuados para la transmisión eficiente a través del medio.
+5. **Codificación de Señales**: Se ocupa de la representación de los bits en señales para la transmisión.
 
-Los componentes de un punto de acceso son:
+## Medios de Transmisión
 
-1. Antenas inalámbricas (Están dentro bueno suelen xd)
+- **Cobre**: Utiliza cables de cobre (como UTP y STP) para transmitir datos. Es susceptible a interferencias electromagnéticas.
+- **Fibra Óptica**: Usa luz para transmitir datos, ofreciendo alta velocidad y resistencia a interferencias.
+- **Inalámbrico**: Utiliza ondas de radio o microondas, permitiendo la transmisión sin cables.
 
-2. Varios puertos de switch de ethernet
+## Características de la Capa Física
 
-3. Un puerto de internet (Fibra, DSL etc)
+- **Topología de Red**: Define cómo están dispuestos los dispositivos en la red (estrella, anillo, bus, etc.).
+- **Velocidad de Transmisión**: Se mide en bps (bits por segundo) y varía según el medio utilizado.
+- **Distancia de Transmisión**: Cada medio tiene una distancia máxima de transmisión antes de que la señal se degrade.
+- **Tráfico de Datos**: La capa física maneja el tráfico de datos en términos de bits, sin preocuparse por el contenido de los mismos.
 
-# NIC (Network Interface Card)
+## Tramas y Encapsulamiento
 
-Una **NIC (Network Interface Card)**, o **tarjeta de interfaz de red**, es un componente de hardware que permite a un dispositivo (como una computadora, servidor o impresora) conectarse a una red. Aquí están sus características principales:
+En la capa física, los datos se transmiten como **tramas**, que son unidades de datos formadas en capas superiores (como la capa de enlace de datos). La capa física se encarga de enviar estas tramas a través del medio.
 
-- **Función**: Facilita la comunicación entre el dispositivo y la red, permitiendo el envío y recepción de datos.
-- **Tipos**: Puede ser una tarjeta de expansión instalada en una ranura de la placa base o un adaptador integrado en la placa base.
-- **Conectividad**: Puede utilizar diferentes tecnologías, como Ethernet (cableado), Wi-Fi (inalámbrico) o incluso conexiones de fibra óptica.
-- **Dirección MAC**: Cada NIC tiene una dirección MAC única, que identifica de manera exclusiva al dispositivo en la red.
+### Estructura de una Trama
 
-Las NIC son esenciales para la comunicación en redes, ya que actúan como el punto de acceso del dispositivo a la infraestructura de red.
+Aunque la capa física no se ocupa del formato de las tramas, es importante entender que se componen de:
+
+- **Datos**: La información que se quiere transmitir.
+- **Direcciones**: Información sobre el origen y destino.
+- **Control de Errores**: Información para detectar y corregir errores.
+
+## Protocolos de la Capa Física
+
+Aunque la capa física no tiene protocolos en sí, hay estándares que regulan cómo deben funcionar:
+
+- **IEEE 802.3**: Estándar para Ethernet.
+- **IEEE 802.11**: Estándar para redes inalámbricas (Wi-Fi).
+- **ITU-T G.703**: Estándar para interfaces de transmisión de telecomunicaciones.
