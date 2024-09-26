@@ -90,6 +90,54 @@ Supongamos que tenemos la red `192.168.1.0/24` y queremos crear 4 subredes.
    - `192.168.1.128/26` -> Hosts: `192.168.1.129` a `192.168.1.190`
    - `192.168.1.192/26` -> Hosts: `192.168.1.193` a `192.168.1.254`
 
+# Operación AND en Direccionamiento IP
+
+La operación **AND** es fundamental en el contexto de redes y direccionamiento IP, especialmente cuando se trabaja con direcciones IP y máscaras de red. Esta operación se utiliza para determinar a qué red pertenece una dirección IP.
+
+## ¿Qué es la operación AND?
+
+La operación AND toma dos valores binarios y produce un resultado en el que cada bit es el resultado de la comparación de los bits correspondientes de los dos valores. Solo produce un bit `1` si ambos bits son `1`, de lo contrario, produce un `0`. La tabla de verdad de la operación AND es la siguiente:
+
+| A | B | A AND B |
+|---|---|---------|
+| 0 | 0 |    0    |
+| 0 | 1 |    0    |
+| 1 | 0 |    0    |
+| 1 | 1 |    1    |
+
+## Aplicación de la operación AND
+
+Para determinar la dirección de red a la que pertenece una dirección IP, realizamos la operación AND entre la dirección IP y la máscara de red.
+
+### Ejemplo:
+
+Supongamos que tenemos la siguiente dirección IP y máscara de red:
+
+- **Dirección IP:** `192.168.1.10`  
+- **Máscara de red:** `255.255.255.0`  
+
+#### Representación Binaria:
+
+- **Dirección IP:** 11000000.10101000.00000001.00001010
+
+- **Máscara de red:**  11111111.11111111.11111111.00000000
+
+#### Aplicando la operación AND:
+
+Realizamos la operación AND bit a bit:
+
+**11000000.10101000.00000001.00001010 (192.168.1.10) AND 11111111.11111111.11111111.00000000 (255.255.255.0)
+11000000.10101000.00000001.00000000 (192.168.1.0)**
+
+
+### Resultado:
+
+La dirección de red resultante es `192.168.1.0`. Esto significa que la dirección IP `192.168.1.10` pertenece a la red `192.168.1.0` con la máscara de red `255.255.255.0`.
+
+## Resumen
+
+La operación AND es esencial para determinar a qué red pertenece una dirección IP, ya que permite identificar la parte de red de la dirección IP. Esta operación se utiliza comúnmente en el enrutamiento y la administración de redes.
+
 
 
 
