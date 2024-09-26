@@ -79,7 +79,7 @@ El **subnetting** (o subdivisión de redes) es una técnica que permite dividir 
 Supongamos que tenemos la red `192.168.1.0/24` y queremos crear 4 subredes. 
 
 1. **Número de bits necesarios para las subredes**:
-   - \(2^n \geq 4 \Rightarrow n = 2\) (tomamos prestados 2 bits).
+   - $$\(2^n \geq 4 \Rightarrow n = 2\)$$ (tomamos prestados 2 bits).
 
 2. **Nueva máscara de subred**:
    - Original: `255.255.255.0` (que es /24)
@@ -91,9 +91,6 @@ Supongamos que tenemos la red `192.168.1.0/24` y queremos crear 4 subredes.
    - `192.168.1.128/26` -> Hosts: `192.168.1.129` a `192.168.1.190`
    - `192.168.1.192/26` -> Hosts: `192.168.1.193` a `192.168.1.254`
 
----
-
-Con este conocimiento, tienes una comprensión básica del direccionamiento IP, las diferencias entre direcciones IP públicas y privadas, la importancia de las máscaras de red y una introducción al subnetting. Si necesitas más detalles o ejemplos específicos, ¡avísame!
 
 
 
