@@ -39,7 +39,7 @@ Rango de IP privadas y sus clases:
 
 Una vez entendemos esta parte de las IP tenemos que saber algo que es muy básico, IP de diferente red dentro de una red no se verán a continuación un ejemplo:
 
-[[!image.png]]
+![La imagen no carga]()
 
 Aquí es donde entra en juego la máscara de red, una máscara de red es básicamente la que delimita que es red de que es hosts, la estructura básica de una máscara de red:
 
