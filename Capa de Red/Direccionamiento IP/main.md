@@ -71,8 +71,8 @@ El **subnetting** (o subdivisión de redes) es una técnica que permite dividir 
 
 3. **Cálculo de Subredes**:
    - Para calcular cuántas subredes y hosts se pueden crear, usamos la fórmula:
-     - **Número de subredes** = \(2^n\), donde \(n\) es el número de bits que se han tomado prestados de la parte del host.
-     - **Número de hosts por subred** = \(2^m - 2\), donde \(m\) es el número de bits restantes para los hosts (restamos 2 para las direcciones de red y broadcast).
+     - **Número de subredes** = $$\(2^n\)$$, donde $$\(n\)$$ es el número de bits que se han tomado prestados de la parte del host.
+     - **Número de hosts por subred** = $$\(2^m - 2\)$$, donde $$\(m\)$$ es el número de bits restantes para los hosts (restamos 2 para las direcciones de red y broadcast).
 
 #### Ejemplo de Subnetting
 
