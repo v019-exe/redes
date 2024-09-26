@@ -46,11 +46,9 @@ Aquí es donde entra en juego la máscara de red, una máscara de red es básica
 **Dirección IP:** 192.168.1.10  
 **Máscara de red:** 255.255.255.0  
 
-**Binario:**  
-
-$$\underline{11111111.11111111.11111111.}\underline{00000000}$$  
-**Red:** $$\underline{11111111.11111111.11111111}.00000000$$ 
-**Host:**$$ \underline {00000000}$$
+**Binario:** `11111111.11111111.11111111.00000000`
+**Red:** `11111111.11111111.11111111`.00000000 
+**Host:**`00000000`
 
 
 
