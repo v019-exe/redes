@@ -147,7 +147,7 @@ def get_terminal_size():
 
 
 def main():
-    if platform == "Windows":
+    if platform.system() == "Windows":
         os.system("cls")
     else:
         os.system("clear")
