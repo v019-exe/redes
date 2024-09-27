@@ -147,6 +147,11 @@ def get_terminal_size():
 
 
 def main():
+    if platform == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+
     while True:
         menu = """
  ▄▄▄        ██████  ██▓▒██   ██▒
@@ -210,8 +215,6 @@ def main():
             hexadecimal = input("Introduce el hexadecimal: ")
             result = convertir_hex_bin(hexadecimal)
             print(result)
-
-        
 
         elif seleccion == "5" or seleccion.lower() == "exit":
             print("Saliendo del programa...")
