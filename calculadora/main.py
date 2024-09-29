@@ -1,7 +1,25 @@
-import shutil
-import os
-import time
-import platform
+try: 
+  import shutil
+  import os
+  import time
+  import platform
+  import requests
+  from colorama import Fore, Style
+  from datetime import datetime
+  from rich.console import Console
+  from rich.text import Text
+except ImportError as e:
+    import os
+    import sys
+    print(f"Instalando dependencias...")
+    os.system("pip install colorama rich requests datetime")
+    print("Dependencias instaladas")
+    python = sys.executable
+    os.execv(python, [python] + ['main.py'])
+
+console = Console()
+
+
 
 def convertir_mascara_binario(mascara: str):
     mascara = mascara.split(".")
@@ -129,7 +147,7 @@ class GradientMenu:
 
     def animate_gradient(self, text, delay=0.1, iterations=100):
         for shift in range(iterations):
-            os.system('cls' if os.name == 'nt' else 'clear')  # Limpiar la consola para cada frame
+            os.system('cls' if os.name == 'nt' else 'clear')
             gradient_text = self.apply_gradient_to_lines(text, shift)
             centered_gradient_text = self.center_text(gradient_text)
             print(centered_gradient_text)
@@ -145,6 +163,34 @@ def get_terminal_size():
         lines = 40
     return columns, lines
 
+def clase_ip(ip):
+    primer_octeto = int(ip.split('.')[0])
+    if 1 <= primer_octeto <= 126:
+        return 'A', 8
+    elif 128 <= primer_octeto <= 191:
+        return 'B', 16
+    elif 192 <= primer_octeto <= 223:
+        return 'C', 24
+    else:
+        return 'Desconocida', 0
+
+
+
+def chat_gemini(text: str):
+    api_key = "AIzaSyB7tWOl_KAveVNB6vpf2PAgFqWOjCgQsVc"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={api_key}"   
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = {"contents":[{"parts":[{"text":f"{text}"}]}]}
+    response = requests.post(url, headers=headers, json=data)
+    response_json = response.json()
+    return response_json["candidates"][0]["content"]["parts"][0]["text"]
+    
+
+    
+
+hora_actual = datetime.now().strftime("%H:%M:%S")
 
 def main():
     if platform.system() == "Windows":
@@ -168,7 +214,9 @@ def main():
   [2] Convertir Binario a Decimal
   [3] Convertir Binario a Hexadecimal
   [4] Convertir Hexadecimal a Binario
-  [5] Salir
+  [5] Chat con Gemini
+  [6] Salir
+  CÓDIGO HECHO POR V019 AKA JD
     """
         
         terminal_columns, _ = get_terminal_size()
@@ -194,7 +242,8 @@ def main():
 
         print(gradient_menu)
 
-        seleccion = input("Seleccione una opción: ")
+        console.print(f"[bold blue][SELECCIÓN][/bold blue] [blue][{hora_actual}][/blue]: [cyan]Seleccione una opción:[/cyan]", end=' ')
+        seleccion = input()
 
         if seleccion == "1":
             mascara = input("Introduzca la máscara: ")
@@ -215,12 +264,21 @@ def main():
             hexadecimal = input("Introduce el hexadecimal: ")
             result = convertir_hex_bin(hexadecimal)
             print(result)
+        if seleccion == "5":
+            while True:
+              text = input("Introduce el texto o pregunta: ")
+              result = chat_gemini(text)
+              print(f"[{Fore.BLUE}PREGUNTA{Fore.RESET}][{Fore.CYAN}{hora_actual}{Fore.RESET}]: {text}{Style.RESET_ALL}")
+              print(f"[{Fore.BLUE}GEMINI AI{Fore.RESET}][{Fore.CYAN}{hora_actual}{Fore.RESET}]: {result}{Style.RESET_ALL}")
 
-        elif seleccion == "5" or seleccion.lower() == "exit":
+              if text.lower() == "salir":
+                  break
+        
+        elif seleccion == "6" or seleccion.lower() == "exit":
             print("Saliendo del programa...")
             break
 
-        if seleccion in ["1", "2", "3", "4"]:
+        if seleccion in ["1", "2", "3", "4", "5"]:
             final = input("¿Quieres continuar usando la herramienta? [s/n]: ")
             if final.lower() != "s":
                 break
