@@ -6,4 +6,4 @@
 | 4           | Transporte              | Proporciona transferencia de datos confiable o no confiable | TCP, UDP             | Direcciones de puerto |
 | 3           | Red                     | Determina la mejor ruta para enviar datos a través de la red | IP                   | Direcciones IP      |
 | 2           | Enlace de Datos         | Proporciona la transferencia de datos entre dispositivos en la misma red | Ethernet, Wi-Fi      | Direcciones MAC     |
-| 1           | Física                  | Transmite los bits a través del medio físico | N/A          | N/A                |
+| 1           | Física                  | Transmite los bits a través del medio físico | NIC          | N/A                |
