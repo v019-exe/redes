@@ -19,3 +19,23 @@ La **segmentación** es un proceso fundamental en el manejo de datos en redes. S
 
 - **Segmentación en la Capa de Transporte**: Protocolos como TCP dividen los datos en segmentos para su transmisión.
 - **Segmentación en la Capa de Enlace de Datos**: En esta capa, los datos se organizan en tramas, que son unidades de datos que incluyen dirección de destino y control de errores.
+
+
+# Dominios de difusión
+
+## ¿Qué es un dominio de difusión?
+
+## ¿Por qué son tan peligrosos los broadcasts?
+
+## Protocolos de broadcast
+
+| **Protocolo**        | **Descripción**                                                                                          | **Capa del modelo OSI** |
+|----------------------|----------------------------------------------------------------------------------------------------------|-------------------------|
+| **ARP (Address Resolution Protocol)** | Se utiliza para mapear direcciones IP a direcciones MAC. El broadcast se usa para encontrar la dirección MAC correspondiente a una IP en la red local. | Capa 2 (Enlace de Datos) |
+| **DHCP (Dynamic Host Configuration Protocol)** | Permite a los dispositivos obtener automáticamente una dirección IP de un servidor. Usa broadcast en el proceso de descubrimiento y solicitud. | Capa 7 (Aplicación)      |
+| **RIP (Routing Information Protocol)** | Protocolo de enrutamiento que utiliza broadcast para enviar actualizaciones de tablas de enrutamiento. | Capa 3 (Red)            |
+| **NetBIOS Name Service (NBNS)**       | Utilizado para la resolución de nombres en redes locales, usando broadcast para resolver nombres de dispositivos. | Capa 7 (Aplicación)      |
+| **Spanning Tree Protocol (STP)**      | Protocolo de capa 2 usado para prevenir bucles en una red conmutada. Usa broadcast para intercambiar información entre switches. | Capa 2 (Enlace de Datos) |
+| **SMB (Server Message Block)**        | Permite compartir archivos y recursos en una red. Utiliza broadcast para descubrir servicios en la red. | Capa 7 (Aplicación)      |
+| **LLDP (Link Layer Discovery Protocol)** | Protocolo de descubrimiento de dispositivos vecinos que usa broadcast para anunciar información en la red local. | Capa 2 (Enlace de Datos) |
+| **Cisco Discovery Protocol (CDP)**    | Protocolo propietario de Cisco para descubrir otros dispositivos Cisco en la misma red. Usa broadcast para enviar anuncios. | Capa 2 (Enlace de Datos) |
