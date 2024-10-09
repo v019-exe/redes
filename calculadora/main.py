@@ -1,26 +1,7 @@
-try: 
-  import shutil
-  import os
-  import time
-  import platform
-  import requests
-  from colorama import Fore, Style
-  from datetime import datetime
-  from rich.console import Console
-  from rich.text import Text
-  import sys
-except ImportError as e:
-    import os
-    import sys
-    print(f"Instalando dependencias...")
-    os.system("pip install colorama rich requests datetime")
-    print("Dependencias instaladas")
-    python = sys.executable
-    os.execv(python, [python] + ['main.py'])
-
-console = Console()
-
-sys.stdout.write('v1.0')
+import shutil
+import os
+import time
+import platform
 
 def convertir_mascara_binario(mascara: str):
     mascara = mascara.split(".")
@@ -148,7 +129,7 @@ class GradientMenu:
 
     def animate_gradient(self, text, delay=0.1, iterations=100):
         for shift in range(iterations):
-            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('cls' if os.name == 'nt' else 'clear')  # Limpiar la consola para cada frame
             gradient_text = self.apply_gradient_to_lines(text, shift)
             centered_gradient_text = self.center_text(gradient_text)
             print(centered_gradient_text)
@@ -175,33 +156,21 @@ def clase_ip(ip):
     else:
         return 'Desconocida', 0
 
+def calcular_subred(ip: str, mascara: str):
+    clase, bits_defecto = clase_ip(ip)
+
+    bits_subred = mascara - bits_defecto
+
+    if bits_subred < 0:
+        return 0
+    
+    return 2 ** bits_subred
 
 
-def chat_gemini(text: str):
-    api_key = "AIzaSyB7tWOl_KAveVNB6vpf2PAgFqWOjCgQsVc"
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={api_key}"   
-    headers = {
-        "Content-Type": "application/json"
-    }
-    data = {"contents":[{"parts":[{"text":f"{text}"}]}]}
-    response = requests.post(url, headers=headers, json=data)
-    response_json = response.json()
-    return response_json["candidates"][0]["content"]["parts"][0]["text"]
     
 
-def convert_decimal_octal(decimal: int):
-    return oct(decimal)[2:].upper()
+    
 
-def convert_bin_octal(binary: str):
-    return oct(int(binary, 2))[2:].upper()
-
-def convert_octal_bin(octal: str):
-    return bin(int(octal, 8))[2:].zfill(8)
-
-def convert_octal_decimal(octal: str):
-    return int(octal, 8)
-
-hora_actual = datetime.now().strftime("%H:%M:%S")
 
 def main():
     if platform.system() == "Windows":
@@ -225,12 +194,8 @@ def main():
   [2] Convertir Binario a Decimal
   [3] Convertir Binario a Hexadecimal
   [4] Convertir Hexadecimal a Binario
-  [5] Convertir Decimal a Octal
-  [6] Convertir Binario a Octal
-  [7] Convertir Octal a Binario
-  [8] Convertir Octal a Decimal
-  [9] Chat con Gemini
-  [10] Salir
+  [5] Calculadora subnetting
+  [6] Salir
     """
         
         terminal_columns, _ = get_terminal_size()
@@ -256,96 +221,35 @@ def main():
 
         print(gradient_menu)
 
-        console.print(f"[bold blue][SELECCIÓN][/bold blue] [blue][{hora_actual}][/blue]: [cyan]Seleccione una opción:[/cyan]", end=' ')
-        seleccion = input()
+        seleccion = input("Seleccione una opción: ")
 
         if seleccion == "1":
-            tiempo_start = time.time()
             mascara = input("Introduzca la máscara: ")
             resultado = convertir_mascara_binario(mascara)
             print(resultado)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
         
         if seleccion == "2":
-            tiempo_start = time.time()
             num_binario = input("Introduce el número binario: ")
             result = convertir_bin_decimal(num_binario)
             print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
         
         if seleccion == "3":
-            tiempo_start = time.time()
             binario = input("Introduce el número binario: ")
             result = convertir_bin_hex(binario)
             print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
         
         if seleccion == "4":
-            tiempo_start = time.time()
             hexadecimal = input("Introduce el hexadecimal: ")
             result = convertir_hex_bin(hexadecimal)
             print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
-        
         if seleccion == "5":
-            tiempo_start = time.time()
-            decimal = int(input("Introduce el decimal: "))
-            result = convert_decimal_octal(decimal)
-            print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
+            pass
         
-        if seleccion == "6":
-            tiempo_start = time.time()
-            binary = input("Introduce el binario: ")
-            result = convert_bin_octal(binary)
-            print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
-        
-        if seleccion == "7":
-            tiempo_start = time.time()
-            octal = input("Introduce el octal: ")
-            result = convert_octal_bin(octal)
-            print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
-        
-        if seleccion == "8":
-            tiempo_start = time.time()
-            octal = input("Introduce el octal: ")
-            result = convert_octal_decimal(octal)
-            print(result)
-            tiempo_final = time.time()
-            tiempo = tiempo_final - tiempo_start
-            print(f"Tiempo de ejecución: {tiempo:.2f} segundos")
-
-        if seleccion == "9":
-            while True:
-              text = input("Introduce el texto o pregunta: ")
-              result = chat_gemini(text)
-              print(f"[{Fore.BLUE}PREGUNTA{Fore.RESET}][{Fore.CYAN}{hora_actual}{Fore.RESET}]: {text}{Style.RESET_ALL}")
-              print(f"[{Fore.BLUE}GEMINI AI{Fore.RESET}][{Fore.CYAN}{hora_actual}{Fore.RESET}]: {result}{Style.RESET_ALL}")
-
-              if text.lower() == "salir":
-                  break
-        
-        elif seleccion == "10" or seleccion.lower() == "exit":
+        elif seleccion == "6" or seleccion.lower() == "exit":
             print("Saliendo del programa...")
             break
 
-        if seleccion in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        if seleccion in ["1", "2", "3", "4", "5"]:
             final = input("¿Quieres continuar usando la herramienta? [s/n]: ")
             if final.lower() != "s":
                 break
