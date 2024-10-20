@@ -32,6 +32,7 @@ Para representar números mayores, el sistema octal utiliza combinaciones de est
 ### Conversión de Decimal a Octal
 
 Para convertir un número decimal a octal, se divide el número sucesivamente entre 8 y se registran los restos. Por ejemplo, para convertir \(15\) a octal:
+
 $$
 \[
 \begin{align*}
