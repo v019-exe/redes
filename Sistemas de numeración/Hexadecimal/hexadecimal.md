@@ -36,6 +36,8 @@ $$
 7 \div 2 = 3 \quad \text{(1)} \\
 3 \div 2 = 1 \quad \text{(1)} \\
 1 \div 2 = 0 \quad \text{(1)} \\
+\newline
+R = 111000010_2
 \end{align*}
 $$
 
