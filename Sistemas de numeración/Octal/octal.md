@@ -1,6 +1,4 @@
-$$
-\section*{Sistemas de Numeración (Octal)}
-$$
+# Sistema de numeración Octal
 El sistema octal es un sistema de numeración que utiliza 8 símbolos diferentes, que son: 
 $$
 \[
