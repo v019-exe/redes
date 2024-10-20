@@ -8,13 +8,14 @@ El binario o base 2 es un sistema númerico formado por 2 números, el 0 y el 1.
 Para convertir un número a binario solo dividimos el número consecutivamente hasta que no podamos dividir ese número por 2, por ejemplo si queremos convertir el número 10 a binario:
 
 $$
-10 \div 2 = 5 (0) \newline
-5 \div 2 = 2 (1) \newline
-2 \div 2 = 1 (0) \newline
-1 \div 2 = 0 (1) \newline
-\newline
+10 \div 2 = 5 \, (0) \\
+5 \div 2 = 2 \, (1) \\
+2 \div 2 = 1 \, (0) \\
+1 \div 2 = 0 \, (1) \\
+\\
 R = 1010_2
 $$
+
 
 ### Tabla de conversión
 Ahora veremos el mismo ejemplo pero con una tabla de conversión, aquí se ven los 8 bits, 8 bits = 1 byte.
