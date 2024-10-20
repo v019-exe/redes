@@ -10,9 +10,9 @@ Convertiremos el número 450 a hexadecimal.
 
 $$
 \begin{align*}
-450 \div 16 = 28 (2) \\
-28 \div 16 = 1 (12) \\
-1 \div 16 = 0 (1) \\
+450 \div 16 = 28 \quad (2) \\
+28 \div 16 = 1 \quad (12) \\
+1 \div 16 = 0 \quad (1) \\
 \newline
 \text{Hex} = 0x1C2
 \end{align*}
