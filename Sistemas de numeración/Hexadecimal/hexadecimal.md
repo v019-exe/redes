@@ -27,15 +27,15 @@ $$
 
 $$
 \begin{align*}
-450 \div 2 & = 225 \quad \text{(0)} \\
-225 \div 2 & = 112 \quad \text{(1)} \\
-112 \div 2 & = 56 \quad \text{(0)} \\
-56 \div 2 & = 28 \quad \text{(0)} \\
-28 \div 2 & = 14 \quad \text{(0)} \\
-14 \div 2 & = 7 \quad \text{(0)} \\
-7 \div 2 & = 3 \quad \text{(1)} \\
-3 \div 2 & = 1 \quad \text{(1)} \\
-1 \div 2 & = 0 \quad \text{(1)} \\
+450 \div 2 = 225 \quad \text{(0)} \\
+225 \div 2 = 112 \quad \text{(1)} \\
+112 \div 2 = 56 \quad \text{(0)} \\
+56 \div 2 = 28 \quad \text{(0)} \\
+28 \div 2 = 14 \quad \text{(0)} \\
+14 \div 2 = 7 \quad \text{(0)} \\
+7 \div 2 = 3 \quad \text{(1)} \\
+3 \div 2 = 1 \quad \text{(1)} \\
+1 \div 2 = 0 \quad \text{(1)} \\
 \end{align*}
 $$
 
@@ -53,6 +53,6 @@ $$
 1100_2 = C_{16} \\
 0010_2 = 2_{16} \\
 \newline
-Hex = 0x1C2_16
+Hex = 0x1C2_{16}
 \end{align*}
 $$
