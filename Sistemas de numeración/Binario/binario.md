@@ -22,7 +22,7 @@ $$
 ### Tabla de conversión
 Ahora veremos el mismo ejemplo pero con una tabla de conversión, aquí se ven los 8 bits, 8 bits = 1 byte.
 
-| Potencia | 2^7   | 2^6   | 2^5   | 2^4   | 2^3   | 2^2   | 2^1   | 2^0   |
+| Potencia | $$2^7$$| $$2^6$$   | $$2^5$$   | $$2^4$$   | $$2^3$$   | $$2^2$$   | $$2^1$$   | $$2^0$$   |
 |----------|-------|-------|-------|-------|-------|-------|-------|-------|
 | Valor    |  128  |  64   |  32   |  16   |   8   |   4   |   2   |   1   |
 | Número   |   1   |   1   |   0   |   0   |   0   |   0   |   0   |   0   |
