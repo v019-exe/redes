@@ -11,7 +11,7 @@ $$ 10 \div 2 = 5 (0)
 5 \div 2 = 2 (1)
 2 \div 2 = 1 (0)
 1 \div 2 = 0 (1)
-R = 1010_2 $$
+\nR = 1010_2 $$
 
 ### Tabla de conversión
 Ahora veremos el mismo ejemplo pero con una tabla de conversión, aquí se ven los 8 bits, 8 bits = 1 byte.
