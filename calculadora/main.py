@@ -2,6 +2,8 @@ import shutil
 import os
 import time
 import platform
+import sys
+import ipaddress
 
 def convertir_mascara_binario(mascara: str):
     mascara = mascara.split(".")
@@ -156,18 +158,50 @@ def clase_ip(ip):
     else:
         return 'Desconocida', 0
 
-def calcular_subred(ip: str, mascara: str):
-    clase, bits_defecto = clase_ip(ip)
-
-    bits_subred = mascara - bits_defecto
-
-    if bits_subred < 0:
-        return 0
+def subnetting(ip: str, mask: str, prefix: str):
+    try:
+        network = ipaddress.ip_network(f"{ip}/{mask}", strict=False)
+    except:
+        print("Error, máscara o ip no válidas")
+        sys.exit(0)
     
-    return 2 ** bits_subred
+    first_octet = int(ip.split(".")[0])
+    if first_octet < 128:
+        ip_class = "A"
+    elif first_octet < 192:
+        ip_class = "B"
+    elif first_octet < 224:
+        ip_class = "C"
+    else:
+        ip_class = "No soportado"
 
+    try:
+        if prefix:
+            prefix = int(prefix)
 
-    
+            subnets = [{
+                  "subred": str(subnet.network_address),
+                  "rango": f"{subnet.network_address + 1} - {subnet.broadcast_address - 1}",
+                  "broadcast": str(subnet.broadcast_address)
+              } for subnet in network.subnets(new_prefix=prefix)]
+        else:
+            
+              subnets = [{
+                  "subred": str(subnet.network_address),
+                  "rango": f"{subnet.network_address + 1} - {subnet.broadcast_address - 1}",
+                  "broadcast": str(subnet.broadcast_address)
+              } for subnet in network.subnets()]
+    except ValueError:
+        print("Prefijo invalido")
+
+    data = {
+        "ip": ip,
+        "mask": mask,
+        "clase": ip_class,
+        "subredes": subnets
+    }
+
+    return data
 
     
 
@@ -243,7 +277,10 @@ def main():
             result = convertir_hex_bin(hexadecimal)
             print(result)
         if seleccion == "5":
-            pass
+            ip = input("Introduce una IP: ")
+            mask = input("Introduce una máscara de subred: ")
+            prefijo = input("Introduce el prefijo: ")
+            print(subnetting(ip, mask, prefijo))
         
         elif seleccion == "6" or seleccion.lower() == "exit":
             print("Saliendo del programa...")
