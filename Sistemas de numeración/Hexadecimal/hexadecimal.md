@@ -49,9 +49,9 @@ Ahora que tenemos los números agrupados, los convertiremos a hexa:
 
 $$
 \begin{align*}
-0001_2 = 1_16 \\
-1100_2 = C_16 \\
-0010_2 = 2_16 \\
+0001_2 = 1_{16} \\
+1100_2 = C_{16} \\
+0010_2 = 2_{16} \\
 \newline
 Hex = 0x1C2_16
 \end{align*}
