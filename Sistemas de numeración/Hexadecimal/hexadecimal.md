@@ -20,6 +20,12 @@ $$
 
 ## Decimal a hexadecimal (Binario)
 $$
+\textbf{Conversión de 450 de Decimal a Hexadecimal}
+$$
+
+1. **Convertir de Decimal a Binario**:
+
+$$
 \begin{align*}
 450 \div 2 & = 225 \quad \text{(0)} \\
 225 \div 2 & = 112 \quad \text{(1)} \\
@@ -32,29 +38,37 @@ $$
 1 \div 2 & = 0 \quad \text{(1)} \\
 \end{align*}
 $$
-$$
-\text{Ahora leemos los restos de abajo hacia arriba:} 
-$$
+
+Ahora leemos los restos de abajo hacia arriba:
+
 $$
 450_{10} = 111000010_2
 $$
 
-$$
-\text{Agrupamos en grupos de 4 bits:}
-$$
+2. **Agrupar en grupos de 4 bits**:
+
+Agrupamos los bits en grupos de 4:
+
 $$
 0011\ 1000\ 0010
 $$
+
+3. **Convertir de Binario a Hexadecimal**:
+
+Cada grupo de 4 bits se convierte a su valor hexadecimal:
 $$
-\text{Los valores correspondientes son:}
 \begin{align*}
-2^7 & = 0 \\
-2^6 & = 0 \\
-2^5 & = 1 \\
-2^4 & = 1 \\
-2^3 & = 1 \\
-2^2 & = 0 \\
-2^1 & = 0 \\
-2^0 & = 0 \\
+0010 & \rightarrow 2 \\
+1000 & \rightarrow 8 \\
+0010 & \rightarrow 2 \\
 \end{align*}
+$$
+
+$$
+Por lo tanto, el número \( 450 \) en decimal se representa como \( 0x282 \) en hexadecimal.
+$$
+### Resultado Final:
+
+$$
+450_{10} = 111000010_2 = 0011\ 1000\ 0010 \Rightarrow 0x1C2_{16}
 $$
