@@ -39,37 +39,8 @@ $$
 \end{align*}
 $$
 
-Ahora leemos los restos de abajo hacia arriba:
+Seguidamente agrupamos los números de 4 en 4:
 
 $$
-450_{10} = 111000010_2
-$$
-
-2. **Agrupar en grupos de 4 bits**:
-
-Agrupamos los bits en grupos de 4:
-
-$$
-0011\ 1000\ 0010
-$$
-
-3. **Convertir de Binario a Hexadecimal**:
-
-Cada grupo de 4 bits se convierte a su valor hexadecimal:
-
-$$
-\begin{align*}
-0010 & \rightarrow 2 \\
-1000 & \rightarrow 8 \\
-0010 & \rightarrow 2 \\
-\end{align*}
-$$
-
-
-Por lo tanto, el número \( 450 \) en decimal se representa como \( 0x1C2 \) en hexadecimal.
-
-### Resultado Final:
-
-$$
-450_{10} = 111000010_2 = 0011\ 1000\ 0010 \Rightarrow 0x1C2_{16}
+0001 \ 1100 \ 0010
 $$
