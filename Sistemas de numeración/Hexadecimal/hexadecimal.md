@@ -56,6 +56,7 @@ $$
 3. **Convertir de Binario a Hexadecimal**:
 
 Cada grupo de 4 bits se convierte a su valor hexadecimal:
+
 $$
 \begin{align*}
 0010 & \rightarrow 2 \\
