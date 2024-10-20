@@ -1,12 +1,4 @@
 # Sistema de numeración Octal
-El sistema octal es un sistema de numeración que utiliza 8 símbolos diferentes, que son: 
-
-$$
-\[
-0, 1, 2, 3, 4, 5, 6, 7
-\]
-$$
-
 Para representar números mayores, el sistema octal utiliza combinaciones de estos dígitos. A continuación, se presentan los números octales del 0 al 17 junto con sus equivalentes en decimal:
 
 | **Octal** | **Decimal** |
