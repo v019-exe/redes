@@ -32,17 +32,20 @@ $$
 1 \div 2 & = 0 \quad \text{(1)} \\
 \end{align*}
 $$
-
+$$
 \text{Ahora leemos los restos de abajo hacia arriba:} 
+$$
 $$
 450_{10} = 111000010_2
 $$
 
+$$
 \text{Agrupamos en grupos de 4 bits:}
+$$
 $$
 0011\ 1000\ 0010
 $$
-
+$$
 \text{Los valores correspondientes son:}
 \begin{align*}
 2^7 & = 0 \\
