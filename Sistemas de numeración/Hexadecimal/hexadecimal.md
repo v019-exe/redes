@@ -66,7 +66,7 @@ $$
 $$
 
 
-Por lo tanto, el número \( 450 \) en decimal se representa como \( 0x282 \) en hexadecimal.
+Por lo tanto, el número \( 450 \) en decimal se representa como \( 0x1C2 \) en hexadecimal.
 
 ### Resultado Final:
 
