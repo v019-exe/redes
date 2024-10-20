@@ -35,9 +35,11 @@ Este método consiste en poner unos en las potencias hasta que los valores sumen
 Para convertir un binario a decimal, tomaremos el número 1010 para convertirlo
 
 $$
-D = 1 * 2^3 + 0 * 2^2 + 1 * 2^1 + 0 * 2^0
-D = 8 + 0 + 2 + 0 = 10
+\begin{align*}
+D = 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 0 \cdot 2^0 \\
+D = 8 + 0 + 2 + 0 \\
 D = 10
+\end{align*}
 $$
 
 ## Tabla de referencia
