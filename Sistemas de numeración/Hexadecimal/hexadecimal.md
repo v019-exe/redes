@@ -54,4 +54,5 @@ $$
 0010_2 = 2_16 \\
 \newline
 Hex = 0x1C2_16
+\end{align*}
 $$
